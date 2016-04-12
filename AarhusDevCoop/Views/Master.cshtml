@@ -1,0 +1,51 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Master>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = null;
+}
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content=@Umbraco.Field("metaDescription")>
+	<meta name="keywords" content=@Umbraco.Field("metaKeywords")>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="/../css/reset.css">
+    <link rel="stylesheet" href="/../css/layout.css">
+	<link rel="stylesheet" href="/../css/menu.css">
+	<link rel="stylesheet" href="/../content/bootstrap.min.css">
+	<!--<link href="http://fonts.googleapis.com/css?family=Arimo:400" rel="stylesheet">-->
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+        
+  <!-- Add your site or application content here -->
+  <header>
+    <nav class="navbar navbar-default">
+	  @Umbraco.RenderMacro("menu")
+	</nav>
+  </header>
+				
+  <div class="container">
+	@RenderBody()
+  </div>
+
+  <script src="/../scripts/jquery-2.2.2.min.js"></script>
+  <script src="/../scripts/bootstrap.min.js"></script>
+  <!-- Client side validation -->
+  <script src="/../scripts/jquery.validate.min.js"></script>
+  <script src="/../scripts/jquery.validate.unobtrusive.min.js"></script>
+			
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+  <script src="/../scripts/main.js"></script>
+
+  </body>
+</html>

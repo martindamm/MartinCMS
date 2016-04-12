@@ -1,0 +1,54 @@
+﻿@model AarhusDevCoop.ViewModels.ContactForm
+@{
+    Layout = null;
+}
+@if (TempData["success"] == null)
+{
+    using (Html.BeginUmbracoForm("HandleFormSubmit", "ContactFormSurface", new object { }, new { @class = "form-horizontal" }))
+    {
+        <!-- markup for Name -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+			    @Html.ValidationMessageFor(m => m.Name)
+            </div>
+        </div>
+
+        <!-- markup for email -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email adress" })
+			    @Html.ValidationMessageFor(m => m.Email)
+            </div>
+        </div>
+
+        <!-- markup for subject -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.Subject, new { @Class = "col-sm-2 control-label" })
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", placeholder = "Subject" })
+			    @Html.ValidationMessageFor(m => m.Subject)
+            </div>
+        </div>
+
+        <!-- markup for message -->
+        <div class="form-group">
+            @Html.LabelFor(m => m.Message, new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.Message, new { @class = "form-control", placeholder = "Your message" })
+			    @Html.ValidationMessageFor(m => m.Message)
+            </div>
+        </div>
+
+        <!-- markup for button-->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-6">
+                <button id="contact-submit" type="submit" class="btn btn-primary input-medium pull-left"></button>
+            </div>
+        </div>
+    }
+} else {
+    <h2>Tak for din henvendelse</h2>
+}

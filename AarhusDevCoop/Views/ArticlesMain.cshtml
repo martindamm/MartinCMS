@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ArticlesMain>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+<h2>Vores artikler</h2>
+<div class="col-md-8">
+  <ul>
+	@foreach (var page in CurrentPage.Children) {
+	  <li><h3>@page.Name</h3>	
+	    <p>@page.articleSummary</p><br />
+		<a href="@page.Url" class="col-md-offset-10">Read more ...</a>
+	    <hr />
+	  </li>
+	}
+  </ul>
+</div>

@@ -1,0 +1,20 @@
+Looking for *.lic in C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop\AarhusDevCoop\bin
+Found 0 .lic file(s):
+Could not validate license:
+
+Your license has been approved for the following IPs/Domains: - This license is *not* associated with any ips or domains at all
+Looking for *.lic in C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop\AarhusDevCoop\bin
+Found 0 .lic file(s):
+Could not validate license:
+
+Your license has been approved for the following IPs/Domains: - This license is *not* associated with any ips or domains at all
+Looking for *.lic in C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop\AarhusDevCoop\bin
+Found 0 .lic file(s):
+Could not validate license:
+
+Your license has been approved for the following IPs/Domains: - This license is *not* associated with any ips or domains at all
+Looking for *.lic in C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop\AarhusDevCoop\bin
+Found 0 .lic file(s):
+Could not validate license:
+
+Your license has been approved for the following IPs/Domains: - This license is *not* associated with any ips or domains at all

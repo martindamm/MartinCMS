@@ -1,0 +1,64 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+	var root = CurrentPage.AncestorOrSelf(1);
+    var projectDropdown = CurrentPage.Site().Children.Where("DocumentTypeAlias == \"projectsMain\"").First().Children.Where("Visible").OrderBy("projectTitle");
+ 
+						}
+<div class="container-fluid">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Aarhus Web Developing Coop</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="@(CurrentPage.Name == root.Name ? " active" : null)"><a href="/">@root.Name</a></li>
+		  
+      @foreach (var menuItem in root.Children.Where("Visible"))
+      {
+
+        var isProtected = umbraco.library.IsProtected(menuItem.id, menuItem.path);
+        var loginAcces = umbraco.library.IsProtected(menuItem.id, menuItem.path) && umbraco.library.HasAccess(menuItem.id, menuItem.path);
+
+        if (!isProtected || loginAcces)
+        {
+
+            if (menuItem.Name != "Projekter")
+            {
+                <li class="@(menuItem.IsAncestorOrSelf(CurrentPage) ? " active" : null)">
+                    <a href="@menuItem.Url">@menuItem.Name</a>
+                </li>
+            }
+            else
+            {
+                <li class="dropdown @(menuItem.IsAncestorOrSelf(CurrentPage) ? " active" : null)">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Our Projects<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                @foreach (var subMenuItem in projectDropdown)
+                {
+                  if ((umbraco.library.GetPreValueAsString(subMenuItem.projectStatus)) == "Completed")
+                    {
+                      @* Display only submenu items users have access to *@
+                      if (!umbraco.library.IsProtected(subMenuItem.id, subMenuItem.path) ||
+                           umbraco.library.IsProtected(subMenuItem.id, subMenuItem.path) && umbraco.library.HasAccess(subMenuItem.id, subMenuItem.path)) {
+                        <li>
+                          <a href="@subMenuItem.Url">@subMenuItem.Name</a>
+                        </li>
+                      }
+                    }
+                }
+                </ul>
+              </li>
+            }
+        }
+    }
+    </ul>
+  </div>
+</div>

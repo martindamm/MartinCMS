@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Master.cshtml";
+    var site = Umbraco.Content(1068);
+}
+<h1>@Umbraco.Field("header")</h1>
+@Umbraco.Field("mainContent")
+<div class="row">
+
+    @foreach (var menuItem in site.Children.Where("Status  == Completed").Take(3))
+    {
+        <div class="col-md-4">
+            <div class="well well-sm">
+                <h4>Projekt: @menuItem.projectsTitle</h4>
+                <dd>Oprettet: @menuItem.CreateDate.ToString("MM/dd-yyyy")</dd><br />
+                <dd>@Html.Raw(menuItem.info.ToString().Substring(0, 200))...<br /><br /><a href="@menuItem.Url">Læs mere</a></dd>
+            </div>
+        </div>
+    }
+</div>

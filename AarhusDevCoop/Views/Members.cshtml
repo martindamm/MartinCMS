@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Members>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+
+@{
+    Layout = "Master.cshtml";
+    var memberService = ApplicationContext.Current.Services.MemberService;
+    var members = memberService.GetMembersByGroup("Active Members");
+}
+<h1>@Umbraco.Field("header")</h1>
+<hr>
+@foreach (var member in members)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                <h4>
+                    @member.GetValue("firstName")
+                    @member.GetValue("lastName")
+                </h4>
+                @member.GetValue("address")<br>
+                @member.GetValue("zip") @member.GetValue("city") <br>
+                Email: @member.Email<br>
+                Skills:
+                @{
+                    String[] skills = member.GetValue("skills").ToString().Split(',');
+                    string skillString =
+                    string.Join(", ", from skill in skills
+                                      select umbraco.library.GetPreValueAsString(Convert.ToInt32(skill)));
+                    <span>@skillString</span>
+                }
+            </p>
+        </div>
+    </div>
+    <br />
+}
