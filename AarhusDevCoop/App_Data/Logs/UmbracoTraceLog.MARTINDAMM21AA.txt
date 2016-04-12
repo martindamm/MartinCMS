@@ -444,3 +444,4 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
  2016-04-12 14:12:38,069 [P4652/D5/T35] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 7ms)
  2016-04-12 14:12:38,210 [P4652/D5/T35] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.cms.businesslogic.macro.IMacroEngine
  2016-04-12 14:12:38,210 [P4652/D5/T35] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 0 (took 6ms)
+ 2016-04-12 14:13:41,945 [P4652/D5/T42] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-04-11 14.13.41
