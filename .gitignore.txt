@@ -259,7 +259,6 @@ paket-files/
 **/App_Data/[Pp]review/
 **/App_Data/TEMP/
 **/App_Data/NuGetBackup/
-**/Bin
 
 # Ignore Umbraco content cache file
 **/App_Data/umbraco.config
