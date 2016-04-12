@@ -174,7 +174,6 @@ C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop - Master
 C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop - Master\AarhusDevCoop\bin\UmbracoExamine.xml
 C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop - Master\AarhusDevCoop\obj\Debug\AarhusDevCoop.dll
 C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop - Master\AarhusDevCoop\obj\Debug\AarhusDevCoop.pdb
-C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop - Master\AarhusDevCoop\obj\Debug\AarhusDevCoop.csprojResolveAssemblyReference.cache
 C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop - Master\AarhusDevCoop\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop - Master\AarhusDevCoop\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\martindamm\Documents\Visual Studio 2015\Projects\AarhusDevCoop - Master\AarhusDevCoop\bin\AutoMapper.dll
